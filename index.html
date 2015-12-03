@@ -9,31 +9,13 @@
     <meta name="description" content="The Importance and Role of Encryption in Society" />
     <meta name="author" content="Thomas Herr" />
 
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
 
     <link href="css/impress-demo.css" rel="stylesheet" />
     <link rel="shortcut icon" href="favicon.png" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 </head>
 
-<!--
-
-    Body element is used by impress.js to set some useful class names, that will allow you to detect
-    the support and state of the presentation in CSS or other scripts.
-
-    First very useful class name is `impress-not-supported`. This class means, that browser doesn't
-    support features required by impress.js, so you should apply some fallback styles in your CSS.
-    It's not necessary to add it manually on this element. If the script detects that browser is not
-    good enough it will add this class, but keeping it in HTML means that users without JavaScript
-    will also get fallback styles.
-
-    When impress.js script detects that browser supports all required features, this class name will
-    be removed.
-
-    The class name on body element also depends on currently active presentation step hide. More details about
-    it can be found later, when `hint` element is being described.
-
--->
 <body class="impress-not-supported">
 
 <!--
@@ -44,66 +26,19 @@
     <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
 </div>
 
-<!--
-    
-    Now that's the core element used by impress.js.
-    
-    That's the wrapper for your presentation step hides. In this element all the impress.js magic happens.
-    It doesn't have to be a `<div>`. Only `id` is important here as that's how the script find it.
-    
-    You probably won't need it now, but there are some configuration options that can be set on this element.
-    
-    To change the duration of the transition between slides use `data-transition-duration="2000"` giving it
-    a number of ms. It defaults to 1000 (1s).
-    
-    You can also control the perspective with `data-perspective="500"` giving it a number of pixels.
-    It defaults to 1000. You can set it to 0 if you don't want any 3D effects.
-    If you are willing to change this value make sure you understand how CSS perspective works:
-    https://developer.mozilla.org/en/CSS/perspective
-    
-    But as I said, you won't need it for now, so don't worry - there are some simple but interesting things
-    right around the corner of this tag ;)
-    
--->
 <div id="impress">
 
-    <!--
-        
-        Here is where interesting thing start to happen.
-        
-        Each step hide of the presentation should be an element inside the `#impress` with a class name
-        of `step hide`. These step hide elements are positioned, rotated and scaled by impress.js, and
-        the 'camera' shows them on each step hide of the presentation.
-        
-        Positioning information is passed through data attributes.
-        
-        In the example below we only specify x and y position of the step hide element with `data-x="-1000"`
-        and `data-y="-1500"` attributes. This means that **the center** of the element (yes, the center)
-        will be positioned in point x = -1000px and y = -1500px of the presentation 'canvas'.
-        
-        It will not be rotated or scaled.
-        
-    -->
     <div id="1" class="step hide slide text-center" data-x="-1000" data-y="-1500">
         <q>Welcome <sup>*</sup></q>
         <span class="footnote"><sup>*</sup>I know this is the last presentation of the day, I will try and make it painless</span>
+
+        <div class="notes">
+            <ul>
+                <li>Very Important Topic</li>
+            </ul>
+        </div>
     </div>
 
-    <!--
-        
-        The `id` attribute of the step hide element is used to identify it in the URL, but it's optional.
-        If it is not defined, it will get a default value of `step hide-N` where N is a number of slide.
-        
-        So in the example below it'll be `step hide-2`.
-        
-        The hash part of the url when this step hide is active will be `#/step hide-2`.
-        
-        You can also use `#step hide-2` in a link, to point directly to this particular step hide.
-        
-        Please note, that while `#/step hide-2` (with slash) would also work in a link it's not recommended.
-        Using classic `id`-based links like `#step hide-2` makes these links usable also in fallback mode.
-        
-    -->
     <div id="2" class="step hide slide text-center" data-x="0" data-y="-1500">
         <q>Who am I?</q>
         <p class="body-text">Tom<br/>Program: Computer Programming</p>
@@ -121,32 +56,31 @@
 
         <p>Viewable at: https://tlherr.github.io/EncryptionPresentation</p>
         <p>Code available: https://github.com/tlherr/EncryptionPresentation</p>
+
+        <div class="notes">
+            <ul>
+                <li>What is it?</li>
+                <li>Where does it come from?</li>
+                <li>What role does it play in society?</li>
+                <li>Why is it needed?</li>
+                <li>Should it be allowed?</li>
+            </ul>
+        </div>
     </div>
 
-
-    <!--
-        
-        This is an example of step hide element being scaled.
-        
-        Again, we use a `data-` attribute, this time it's `data-scale="4"`, so it means that this
-        element will be 4 times larger than the others.
-        From presentation and transitions point of view it means, that it will have to be scaled
-        down (4 times) to make it back to its correct size.
-        
-    -->
     <div id="5" class="step hide" data-x="0" data-y="500" data-scale="3">
         <span class="try">What is</span>
         <h1>Encryption?</h1>
+
+        <div class="notes">
+            <ul>
+                <li>Probably thinking of CSI style hacking green text</li>
+                <li>We view it as strictly digital, it is much broader</li>
+                <li>Anyone think they could define it for us?</li>
+            </ul>
+        </div>
     </div>
 
-    <!--
-        
-        This element introduces rotation.
-        
-        Notation shouldn't be a surprise. We use `data-rotate="90"` attribute, meaning that this
-        element should be rotated by 90 degrees clockwise.
-        
-    -->
     <div id="6" class="step hide" data-x="500" data-y="2000" data-rotate="90" data-scale="3">
         <p>to change <strong>information</strong> from one form to another especially to hide its meaning</p>
         <span class="footnote">Merriam-Webster Dictionary</span>
@@ -154,171 +88,175 @@
 
     <div id="7" class="step hide" data-x="3500" data-y="2100" data-rotate="180" data-scale="6">
         <p>You have probably already used it without knowing</p>
+
+        <div class="notes">
+            <ul>
+                <li>Or it has become such an integrated part of your daily life you do not even notice it</li>
+            </ul>
+        </div>
     </div>
 
-    <!--
-        
-        And now it gets really exciting! We move into third dimension!
-        
-        Along with `data-x` and `data-y`, you can define the position on third (Z) axis, with
-        `data-z`. In the example below we use `data-z="-3000"` meaning that element should be
-        positioned far away from us (by 3000px).
-        
-    -->
     <div id="8" class="step hide" data-x="2825" data-y="2325" data-z="-3000" data-rotate="300" data-scale="1">
         <ul>
             <li>Debit/Credit Cards</li>
-            <li>Mobile Networks</li>
-            <li>Smart Phones</li>
-            <li>WiFi</li>
-            <li>SSL</li>
+            <li>Cellular Networks</li>
+            <li>VPNs (Remote Workers)</li>
+            <li>WiFi Security</li>
+            <li>Financial Transactions (eCommerce, online banking) (SSL)</li>
         </ul>
+
+        <div class="notes">
+            <ul>
+                <li>Just a few examples</li>
+                <li>Encryption allows us to do all these things with the confidence our information is secure</li>
+            </ul>
+        </div>
     </div>
 
     <div id="9" class="step hide" data-x="3500" data-y="1000" data-scale="6">
         <p>You even used it as a <b class="positioning">child</b></p>
+
+        <div class="notes">
+            <ul>
+                <li>Pig Latin</li>
+            </ul>
+        </div>
     </div>
 
     <div id="10" class="step hide" data-x="6800" data-y="2000" data-scale="4">
-        <p>Encryption in History</p>
+        <p>History of Encryption</p>
+
+        <div class="notes">
+            <ul>
+                <li>We like to think it is very new</li>
+                <li>Anyone like to hazard a guess how long humans have been doing this?</li>
+                <li>About 4000 years</li>
+            </ul>
+        </div>
     </div>
 
     <div id="11" class="step hide text-center" data-x="10000" data-y="4000" data-rotate="20" data-scale="3">
         <p>Egyptian Hieroglphys (1900 BC)</p>
         <img class="centered" src="img/Papyrus_Ani_curs_hiero.jpg" />
         <p>~4000 Years Ago</p>
+
+        <div class="notes">
+            <ul>
+                <li>Not specifically intended for hiding information</li>
+                <li>More visually expressive way of story telling</li>
+                <li>Great at the time for illiterate people</li>
+                <li>Would not be fully understood until around 1820s</li>
+            </ul>
+        </div>
     </div>
 
-
     <div id="12" class="step hide text-center" data-x="15000" data-y="4000" data-rotate="20" data-scale="3">
-        <p>Roman <b class="positioning">(Caesar Cipher ~ 2000 Years Old)</b></p>
-
+        <p>Roman <b class="positioning">(Caesar Cipher 50 BC)</b></p>
         <img class="centered" src="img/caesarcipher.gif" />
+
+        <div class="notes">
+            <ul>
+                <li>Named after the Roman leader who used it in his private communications</li>
+                <li>Functions by shifting letters in the alphabet and substituing those letters to encode message</li>
+            </ul>
+        </div>
     </div>
 
     <div id="13" class="step hide text-center" data-x="20000" data-y="4000" data-rotate="20" data-scale="3">
-        <p>Greek <b class="positioning">(Steganography ~ 2400 Years Old)</b></p>
-
+        <p>Greek <b class="positioning">(Steganography 440 BC)</b></p>
         <img class="centered" src="img/stego_anime.gif" />
+
+        <div class="notes">
+            <ul>
+                <li>Practice of hiding information inside other seemingly mundane information</li>
+                <li>Messages shaved into runners heads, wax on boards</li>
+            </ul>
+        </div>
     </div>
 
     <div id="14" class="step hide text-center" data-x="25000" data-y="4000" data-rotate="20" data-scale="3">
-        <p>Arabic <b class="positioning">(Frequency Analysis ~ 2800 Years Old)</b></p>
-
+        <p>Arabic <b class="positioning">(Frequency Analysis 800s)</b></p>
         <img class="centered" src="img/English_letter_frequency_alphabetic.svg" />
-    </div>
 
+        <div class="notes">
+            <ul>
+                <li>One of the earliest forms of crypotgraphic analysis, used to break codes</li>
+            </ul>
+        </div>
+    </div>
 
 
     <div id="15" class="step hide text-center" data-x="6000" data-y="3000" data-scale="2">
-        <p>Evil!</p>
+        <p>Is Encryption too Dangerous?</p>
         <img class="centered" src="img/leethacks.gif" />
-    </div>
 
+        <div class="notes">
+            <ul>
+                <li>There is lots of controvercy surrounding encryption</li>
+                <li>Some countries have tried to make its use illegal (France relaxed in 2004 is a noteable example)</li>
+            </ul>
+        </div>
+    </div>
 
     <div id="16" class="step hide text-center" data-x="6000" data-y="1000" data-scale="2">
         <p>Terrorism</p>
-        <p>Surveillance</p>
+        <p>Child Pornography</p>
+        <p>Espionage/Treason</p>
+
+        <div class="notes">
+            <ul>
+                <li>Unfortunatly some of the terrible things encryption could be used to help conceal</li>
+            </ul>
+        </div>
     </div>
 
+    <div id="18" class="step hide text-center" data-x="6000" data-y="1000" data-scale="2">
+        <p>Going Dark</p>
+        <img class="centered" src="img/please_stand_by.jpg" />
 
-    <!--
-        
-        And the last one shows full power and flexibility of impress.js.
-        
-        You can not only position element in 3D, but also rotate it around any axis.
-        So this one here will get rotated by -40 degrees (40 degrees anticlockwise) around X axis and
-        10 degrees (clockwise) around Y axis.
-        
-        You can of course rotate it around Z axis with `data-rotate-z` - it has exactly the same effect
-        as `data-rotate` (these two are basically aliases).
-        
-    -->
-    <div id="17" class="step hide" data-x="6200" data-y="4300" data-z="-100" data-rotate-x="-40" data-rotate-y="10" data-scale="2">
+        <div class="notes">
+            <ul>
+                <li>The idea of going dark is that if everyone used strong encryption law enforcement would be left in the dark</li>
+                <li>Without access to unencrypted communications would be unable to protect public</li>
+                <li>In Reality there are many legal traditional investigative methods the continue to function</li>
+                <li>Warrants can still be used to compel the decryption of information when a crime has been suspected</li>
+                <li>Those of you who believe that 5th ammendement (right not to self incriminate) would cover this would be incorrect</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="19" class="step hide text-center" data-x="6000" data-y="1000" data-scale="2">
+        <p>Could it be stopped?</p>
+    </div>
+
+    <div id="20" class="step hide" data-x="6200" data-y="4300" data-z="-100" data-rotate-x="-40" data-rotate-y="10" data-scale="2">
         <img class="centered" src="img/book.jpg" />
     </div>
 
-    <div id="18" class="step hide" data-x="6400" data-y="5600" data-z="-100" data-rotate-x="-80" data-rotate-y="10" data-scale="3">
+    <div id="21" class="step hide" data-x="6400" data-y="5600" data-z="-100" data-rotate-x="-80" data-rotate-y="10" data-scale="3">
         <img class="pull-left img-half" src="img/uk-front2.jpg" />
         <img class="pull-right img-half" src="img/uk-back2.jpg" />
     </div>
 
-    <div id="19" class="step hide" data-x="6200" data-y="0" data-z="-100" data-rotate-x="-40" data-rotate-y="10" data-scale="2">
+    <div id="22" class="step hide" data-x="6200" data-y="0" data-z="-100" data-rotate-x="-40" data-rotate-y="10" data-scale="2">
         <p>Can't make it go away</p>
         <p>It can be good and bad</p>
         <p>What about a compromise?</p>
     </div>
 
 
-    <div id="20" class="step hide" data-x="6200" data-y="0" data-rotate-x="-40" data-rotate-y="10" data-scale="2">
+    <div id="23" class="step hide" data-x="6200" data-y="0" data-rotate-x="-40" data-rotate-y="10" data-scale="2">
         <p>Backdoors sound great, lets just do that!</p>
     </div>
 
-    <div id="21" class="step hide" data-x="6500" data-y="0" data-z="-1000" data-rotate-x="-40" data-rotate-y="10" data-scale="2">
+    <div id="24" class="step hide" data-x="6500" data-y="0" data-z="-1000" data-rotate-x="-40" data-rotate-y="10" data-scale="2">
         <p>The Human Need for Privacy</p>
     </div>
 
 
 
-    <div id="code" class="step hide" data-x="4000" data-y="6500" data-z="-100" data-rotate-x="-10" data-rotate-y="200" data-scale="2">
 
-        <script type="text/javascript">
-            document.addEventListener("impress:step hideenter", function (event) {
-                stephandler(event.target.id); });
 
-            function stephandler(id)
-            {
-                if(id==='code') {
-                    var openpgp = window.openpgp;
-                    var pubKeyOutput = document.getElementById("pubkey");
-                    var privKeyOutput = document.getElementById("privkey");
-                    var messageOutput = document.getElementById("message");
-
-                    function keygen(numBits, userId, passphrase) {
-                        var openpgp = window.openpgp;
-                        var key =  openpgp.generateKeyPair({
-                            numBits: numBits,
-                            userId: userId,
-                            passphrase: passphrase
-                        });
-                        pubKeyOutput.value = key.publicKeyArmored;
-                        privKeyOutput.value = key.privateKeyArmored;
-                        return key;
-                    }
-
-                    var key = keygen(1024, "Test User", "shittypassword");
-                    var publicKey = openpgp.key.readArmored(key.publicKeyArmored);
-                    var message;
-
-                    openpgp.encryptMessage(publicKey.keys, 'Hello, World!').then(function(pgpMessage) {
-                        // success
-                        message = pgpMessage;
-                        messageOutput.value = pgpMessage;
-                    }).catch(function(error) {
-                        // failure
-                        messageOutput.value = error;
-                        message = null;
-                    });
-
-                    var privateKey = openpgp.key.readArmored(key.privateKeyArmored);
-                    privateKey.decrypt('shittypassword');
-                    var pgpMessage = openpgp.message.readArmored(message);
-                    openpgp.decryptMessage(privateKey, pgpMessage).then(function(plaintext) {
-                        // success
-                    }).catch(function(error) {
-                        // failure
-                    });
-                }
-            }
-        </script>
-
-        <q>Example</q>
-        <form>
-            <textarea class="pull-left" id="pubkey" rows="8" cols="40"></textarea>
-            <textarea class="pull-left" id="privkey" rows="8" cols="40"></textarea>
-            <textarea class="pull-right" id="message" rows="4" cols="40"></textarea>
-        </form>
-    </div>
 
 
     <!--
@@ -383,8 +321,8 @@
     
 -->
 <script src="js/impress.js"></script>
-<script src="js/openpgp.js"></script>
-<script>impress().init();</script>
+<script src="js/impressConsole.js"></script>
+<script>impress().init();impressConsole().init();</script>
 
 <!--
     

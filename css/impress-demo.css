@@ -167,6 +167,10 @@ a:focus {
 .step:not(.active) { opacity: 0.3; }
 .step.hide:not(.active) { opacity: 0; }
 
+.step .notes {
+    display: none;
+}
+
 .step {
     position: relative;
     width: 900px;
