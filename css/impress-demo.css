@@ -163,6 +163,10 @@ a:focus {
     We start with basics to make sure it displays correctly in everywhere ...
 */
 
+/* fade out inactive slides */
+.step:not(.active) { opacity: 0.3; }
+.step.hide:not(.active) { opacity: 0; }
+
 .step {
     position: relative;
     width: 900px;
@@ -187,7 +191,6 @@ a:focus {
 */
 .impress-enabled .step {
     margin: 0;
-    opacity: 0.3;
 
     -webkit-transition: opacity 1s;
     -moz-transition:    opacity 1s;

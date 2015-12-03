@@ -30,7 +30,7 @@
     When impress.js script detects that browser supports all required features, this class name will
     be removed.
 
-    The class name on body element also depends on currently active presentation step. More details about
+    The class name on body element also depends on currently active presentation step hide. More details about
     it can be found later, when `hint` element is being described.
 
 -->
@@ -48,7 +48,7 @@
     
     Now that's the core element used by impress.js.
     
-    That's the wrapper for your presentation steps. In this element all the impress.js magic happens.
+    That's the wrapper for your presentation step hides. In this element all the impress.js magic happens.
     It doesn't have to be a `<div>`. Only `id` is important here as that's how the script find it.
     
     You probably won't need it now, but there are some configuration options that can be set on this element.
@@ -71,59 +71,62 @@
         
         Here is where interesting thing start to happen.
         
-        Each step of the presentation should be an element inside the `#impress` with a class name
-        of `step`. These step elements are positioned, rotated and scaled by impress.js, and
-        the 'camera' shows them on each step of the presentation.
+        Each step hide of the presentation should be an element inside the `#impress` with a class name
+        of `step hide`. These step hide elements are positioned, rotated and scaled by impress.js, and
+        the 'camera' shows them on each step hide of the presentation.
         
         Positioning information is passed through data attributes.
         
-        In the example below we only specify x and y position of the step element with `data-x="-1000"`
+        In the example below we only specify x and y position of the step hide element with `data-x="-1000"`
         and `data-y="-1500"` attributes. This means that **the center** of the element (yes, the center)
         will be positioned in point x = -1000px and y = -1500px of the presentation 'canvas'.
         
         It will not be rotated or scaled.
         
     -->
-    <div id="1" class="step slide text-center" data-x="-1000" data-y="-1500">
+    <div id="1" class="step hide slide text-center" data-x="-1000" data-y="-1500">
         <q>Welcome <sup>*</sup></q>
         <span class="footnote"><sup>*</sup>I know this is the last presentation of the day, I will try and make it painless</span>
     </div>
 
     <!--
         
-        The `id` attribute of the step element is used to identify it in the URL, but it's optional.
-        If it is not defined, it will get a default value of `step-N` where N is a number of slide.
+        The `id` attribute of the step hide element is used to identify it in the URL, but it's optional.
+        If it is not defined, it will get a default value of `step hide-N` where N is a number of slide.
         
-        So in the example below it'll be `step-2`.
+        So in the example below it'll be `step hide-2`.
         
-        The hash part of the url when this step is active will be `#/step-2`.
+        The hash part of the url when this step hide is active will be `#/step hide-2`.
         
-        You can also use `#step-2` in a link, to point directly to this particular step.
+        You can also use `#step hide-2` in a link, to point directly to this particular step hide.
         
-        Please note, that while `#/step-2` (with slash) would also work in a link it's not recommended.
-        Using classic `id`-based links like `#step-2` makes these links usable also in fallback mode.
+        Please note, that while `#/step hide-2` (with slash) would also work in a link it's not recommended.
+        Using classic `id`-based links like `#step hide-2` makes these links usable also in fallback mode.
         
     -->
-    <div id="2" class="step slide text-center" data-x="0" data-y="-1500">
+    <div id="2" class="step hide slide text-center" data-x="0" data-y="-1500">
         <q>Who am I?</q>
         <p class="body-text">Tom<br/>Program: Computer Programming</p>
     </div>
 
-    <div id="3" class="step slide text-center" data-x="1000" data-y="-1500">
+    <div id="3" class="step hide slide text-center" data-x="1000" data-y="-1500">
         <q>Questions</q>
         <p>Please feel free to ask me a question at any point</p>
         <img class="centered" src="img/xkcd-slides.png" />
         <span class="footnote">Source: XKCD #365</span>
     </div>
 
-    <div id="4" class="step slide text-center" data-x="2000" data-y="-1500">
+    <div id="4" class="step hide slide text-center" data-x="2000" data-y="-1500">
         <q>Encryption in Society</q>
+
+        <p>Viewable at: https://tlherr.github.io/EncryptionPresentation</p>
+        <p>Code available: https://github.com/tlherr/EncryptionPresentation</p>
     </div>
 
 
     <!--
         
-        This is an example of step element being scaled.
+        This is an example of step hide element being scaled.
         
         Again, we use a `data-` attribute, this time it's `data-scale="4"`, so it means that this
         element will be 4 times larger than the others.
@@ -131,7 +134,7 @@
         down (4 times) to make it back to its correct size.
         
     -->
-    <div id="5" class="step" data-x="0" data-y="0" data-scale="4">
+    <div id="5" class="step hide" data-x="0" data-y="500" data-scale="3">
         <span class="try">What is</span>
         <h1>Encryption?</h1>
     </div>
@@ -144,12 +147,12 @@
         element should be rotated by 90 degrees clockwise.
         
     -->
-    <div id="6" class="step" data-x="850" data-y="3000" data-rotate="90" data-scale="5">
+    <div id="6" class="step hide" data-x="500" data-y="2000" data-rotate="90" data-scale="3">
         <p>to change <strong>information</strong> from one form to another especially to hide its meaning</p>
         <span class="footnote">Merriam-Webster Dictionary</span>
     </div>
 
-    <div id="7" class="step" data-x="3500" data-y="2100" data-rotate="180" data-scale="6">
+    <div id="7" class="step hide" data-x="3500" data-y="2100" data-rotate="180" data-scale="6">
         <p>You have probably already used it without knowing</p>
     </div>
 
@@ -162,7 +165,7 @@
         positioned far away from us (by 3000px).
         
     -->
-    <div id="8" class="step" data-x="2825" data-y="2325" data-z="-3000" data-rotate="300" data-scale="1">
+    <div id="8" class="step hide" data-x="2825" data-y="2325" data-z="-3000" data-rotate="300" data-scale="1">
         <ul>
             <li>Debit/Credit Cards</li>
             <li>Mobile Networks</li>
@@ -172,35 +175,48 @@
         </ul>
     </div>
 
-    <div id="9" class="step" data-x="3500" data-y="-850" data-rotate="270" data-scale="6">
+    <div id="9" class="step hide" data-x="3500" data-y="1000" data-scale="6">
         <p>You even used it as a <b class="positioning">child</b></p>
     </div>
 
-    <div id="10" class="step" data-x="6800" data-y="2000" data-rotate="20" data-scale="4">
+    <div id="10" class="step hide" data-x="6800" data-y="2000" data-scale="4">
         <p>Encryption in History</p>
     </div>
 
-    <div id="11" class="step text-center" data-x="10000" data-y="4000" data-rotate="20" data-scale="3">
+    <div id="11" class="step hide text-center" data-x="10000" data-y="4000" data-rotate="20" data-scale="3">
         <p>Egyptian Hieroglphys (1900 BC)</p>
         <img class="centered" src="img/Papyrus_Ani_curs_hiero.jpg" />
         <p>~4000 Years Ago</p>
     </div>
 
 
-    <div id="12" class="step text-center" data-x="15000" data-y="4000" data-rotate="20" data-scale="3">
-        <p>Other Examples:</p>
-        <p>Roman <b class="positioning">(Caesar Cipher)</b></p>
-        <p>Greek <b class="positioning">(Stenography)</b></p>
-        <p>Arabic <b class="positioning">(Frequency Analysis)</b></p>
+    <div id="12" class="step hide text-center" data-x="15000" data-y="4000" data-rotate="20" data-scale="3">
+        <p>Roman <b class="positioning">(Caesar Cipher ~ 2000 Years Old)</b></p>
+
+        <img class="centered" src="img/caesarcipher.gif" />
     </div>
 
-    <div id="13" class="step text-center" data-x="6000" data-y="3000" data-scale="2">
+    <div id="13" class="step hide text-center" data-x="20000" data-y="4000" data-rotate="20" data-scale="3">
+        <p>Greek <b class="positioning">(Steganography ~ 2400 Years Old)</b></p>
+
+        <img class="centered" src="img/stego_anime.gif" />
+    </div>
+
+    <div id="14" class="step hide text-center" data-x="25000" data-y="4000" data-rotate="20" data-scale="3">
+        <p>Arabic <b class="positioning">(Frequency Analysis ~ 2800 Years Old)</b></p>
+
+        <img class="centered" src="img/English_letter_frequency_alphabetic.svg" />
+    </div>
+
+
+
+    <div id="15" class="step hide text-center" data-x="6000" data-y="3000" data-scale="2">
         <p>Evil!</p>
         <img class="centered" src="img/leethacks.gif" />
     </div>
 
 
-    <div id="14" class="step text-center" data-x="6000" data-y="1000" data-scale="2">
+    <div id="16" class="step hide text-center" data-x="6000" data-y="1000" data-scale="2">
         <p>Terrorism</p>
         <p>Surveillance</p>
     </div>
@@ -218,20 +234,36 @@
         as `data-rotate` (these two are basically aliases).
         
     -->
-    <div id="munition" class="step" data-x="6200" data-y="4300" data-z="-100" data-rotate-x="-40" data-rotate-y="10" data-scale="2">
+    <div id="17" class="step hide" data-x="6200" data-y="4300" data-z="-100" data-rotate-x="-40" data-rotate-y="10" data-scale="2">
+        <img class="centered" src="img/book.jpg" />
+    </div>
+
+    <div id="18" class="step hide" data-x="6400" data-y="5600" data-z="-100" data-rotate-x="-80" data-rotate-y="10" data-scale="3">
         <img class="pull-left img-half" src="img/uk-front2.jpg" />
         <img class="pull-right img-half" src="img/uk-back2.jpg" />
     </div>
 
-
-    <div id="book" class="step" data-x="6400" data-y="5600" data-z="-100" data-rotate-x="-80" data-rotate-y="10" data-scale="3">
-        <img class="centered" src="img/book.jpg" />
+    <div id="19" class="step hide" data-x="6200" data-y="0" data-z="-100" data-rotate-x="-40" data-rotate-y="10" data-scale="2">
+        <p>Can't make it go away</p>
+        <p>It can be good and bad</p>
+        <p>What about a compromise?</p>
     </div>
 
-    <div id="code" class="step" data-x="4000" data-y="6500" data-z="-100" data-rotate-x="-10" data-rotate-y="200" data-scale="2">
+
+    <div id="20" class="step hide" data-x="6200" data-y="0" data-rotate-x="-40" data-rotate-y="10" data-scale="2">
+        <p>Backdoors sound great, lets just do that!</p>
+    </div>
+
+    <div id="21" class="step hide" data-x="6500" data-y="0" data-z="-1000" data-rotate-x="-40" data-rotate-y="10" data-scale="2">
+        <p>The Human Need for Privacy</p>
+    </div>
+
+
+
+    <div id="code" class="step hide" data-x="4000" data-y="6500" data-z="-100" data-rotate-x="-10" data-rotate-y="200" data-scale="2">
 
         <script type="text/javascript">
-            document.addEventListener("impress:stepenter", function (event) {
+            document.addEventListener("impress:step hideenter", function (event) {
                 stephandler(event.target.id); });
 
             function stephandler(id)
@@ -291,20 +323,20 @@
 
     <!--
         
-        So to summarize of all the possible attributes used to position presentation steps, we have:
+        So to summarize of all the possible attributes used to position presentation step hides, we have:
         
-        * `data-x`, `data-y`, `data-z` - they define the position of **the center** of step element on
+        * `data-x`, `data-y`, `data-z` - they define the position of **the center** of step hide element on
             the canvas in pixels; their default value is 0;
         * `data-rotate-x`, `data-rotate-y`, 'data-rotate-z`, `data-rotate` - they define the rotation of
             the element around given axis in degrees; their default value is 0; `data-rotate` and `data-rotate-z`
             are exactly the same;
-        * `data-scale` - defines the scale of step element; default value is 1
+        * `data-scale` - defines the scale of step hide element; default value is 1
         
         These values are used by impress.js in CSS transformation functions, so for more information consult
         CSS transfrom docs: https://developer.mozilla.org/en/CSS/transform
         
     -->
-    <div id="overview" class="step" data-x="3000" data-y="1500" data-scale="10">
+    <div id="overview" class="step hide" data-x="3000" data-y="1500" data-scale="10">
     </div>
 
 </div>
@@ -315,13 +347,13 @@
     
     But it can show you how to use impress.js features in creative way.
     
-    When the presentation step is shown (selected) its element gets the class of "active" and the body element
-    gets the class based on active step id `impress-on-ID` (where ID is the step's id)... It may not be
-    so clear because of all these "ids" in previous sentence, so for example when the first step (the one with
+    When the presentation step hide is shown (selected) its element gets the class of "active" and the body element
+    gets the class based on active step hide id `impress-on-ID` (where ID is the step hide's id)... It may not be
+    so clear because of all these "ids" in previous sentence, so for example when the first step hide (the one with
     the id of `bored`) is active, body element gets a class of `impress-on-bored`.
     
     This class is used by this hint below. Check CSS file to see how it's shown with delayed CSS animation when
-    the first step of presentation is visible for a couple of seconds.
+    the first step hide of presentation is visible for a couple of seconds.
     
     ...
     
@@ -365,9 +397,9 @@
     and you will get three functions you can call:
     
         `api.init()` - initializes the presentation,
-        `api.next()` - moves to next step of the presentation,
-        `api.prev()` - moves to previous step of the presentation,
-        `api.goto( idx | id | element, [duration] )` - moves the presentation to the step given by its index number
+        `api.next()` - moves to next step hide of the presentation,
+        `api.prev()` - moves to previous step hide of the presentation,
+        `api.goto( idx | id | element, [duration] )` - moves the presentation to the step hide given by its index number
                 id or the DOM element; second parameter can be used to define duration of the transition in ms,
                 but it's optional - if not provided default transition duration for the presentation will be used.
     
